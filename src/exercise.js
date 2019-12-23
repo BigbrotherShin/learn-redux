@@ -83,9 +83,9 @@ console.log(store.getState()); // 현재 store 안에 들어있는 상태를 조
 const listener = () => {
   const state = store.getState();
   console.log(state);
-}
+};
 
-const unsubscribe = store.subscribe(listener);
+const unsubscribe = store.subscribe(listener); // 구독
 // 구독을 해제하고 싶을 때는 unsubscribe() 를 호출하면 됩니다.
 
 // 액션들을 디스패치 해봅시다.
@@ -93,3 +93,5 @@ store.dispatch(increase());
 store.dispatch(decrease());
 store.dispatch(changeText('AnnyungHaseYo'));
 store.dispatch(addToList({ id: 1, text: 'wow' }));
+
+window.store = store; // store instance를 console에서 사용 가능.
