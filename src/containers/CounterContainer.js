@@ -19,7 +19,7 @@ function CounterContainer() {
   // 각 액션들을 디스패치하는 함수들을 만드세요
   const onIncrease = () => dispatch(increase());
   const onDecrease = () => dispatch(decrease());
-  const onSetDiff = () => dispatch(setDiff());
+  const onSetDiff = (diff) => dispatch(setDiff(diff));
 
   return (
     <Counter
