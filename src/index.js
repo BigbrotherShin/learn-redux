@@ -6,8 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'; //리액트 프로젝트에 리덕스를 적용 할 때에는 react-redux 라는 라이브러리를 사용
 import rootReducer from './modules';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer); // make store, store function parameter is reducer
+const store = createStore(rootReducer, composeWithDevTools()); // make store, store function parameter is reducer
+// composeWithDevTools 를 사용하여 리덕스 개발자 도구 활성화
 
 ReactDOM.render( // Provider의 props로 store를 넣어서 App 을 감싸게 되면 
   // 렌더링하는 그 어떤 컴포넌트던지 리덕스 스토어에 접근 할 수 있음.
