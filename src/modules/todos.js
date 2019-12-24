@@ -8,7 +8,8 @@ export const addTodo = text => ({
   type: ADD_TODO,
   todo: {
     id: nextId++, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
-    text
+    text,
+    done: false,
   }
 });
 export const toggleTodo = id => ({
