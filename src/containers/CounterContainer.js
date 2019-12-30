@@ -30,19 +30,13 @@ const mapStateToProps = state => ({
   diff: state.counter.diff
 });
 
-// mapDispatchToProps 는 액션을 디스패치하는 함수를 만들어서 props로 넣어줍니다.
-// dispatch 를 파라미터로 받아옵니다.
-const mapDispatchToProps = dispatch => (
-  // bindActionCreators 를 사용하면, 자동으로 액션 생성 함수에 dispatch 가 감싸진 상태로 호출 할 수 있습니다.
-  bindActionCreators(
-    {
-      increase,
-      decrease,
-      setDiff
-    },
-    dispatch
-  )
-);
+// mapDispatchToProps가 함수가 아니라 객체면
+// bindActionCreators 를 connect 에서 대신 해줍니다.
+const mapDispatchToProps = {
+  increase,
+  decrease,
+  setDiff
+};
 
 // connect 함수에는 mapStateToProps, mapDispatchToProps 를 인자로 넣어주세요.
 export default connect(
